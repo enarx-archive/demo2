@@ -1,9 +1,9 @@
-use rand::prelude::*;
 use std::io::Read;
 
 fn main() {
-    let mut rng = rand::thread_rng();
-    let number: u32 = rng.gen();
+    let mut buf = [0u8; 4];
+    let _ = getrandom::getrandom(&mut buf).unwrap();
+    let number = u32::from_le_bytes(buf);
     let string = format!("{:08x}", number);
 
     println!("Press any key to reveal the secret...");
