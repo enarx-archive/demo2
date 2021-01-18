@@ -1,0 +1,6 @@
+---
+stdio:
+  stdin: "null"
+  stdout: "null"
+  stderr: "null"
+listen_address: "localhost:5000"
